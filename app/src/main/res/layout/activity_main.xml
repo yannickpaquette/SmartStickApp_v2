@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/header_blue"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/bauer_logo"
+            android:scaleType="fitCenter"
+            android:contentDescription="Bauer logo" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Smart Bauer Stick"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/statusIndicator"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/circle_red" />
+
+        <TextView
+            android:id="@+id/tvConnectionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disconnected"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- DEVICE NAME BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/surface_dark"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEVICE : "
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvDeviceName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="—"
+            android:textColor="@color/accent_green"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- CONNECTION BUTTONS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@color/bg_dark">
+
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Scan"
+            android:textSize="12sp"
+            android:backgroundTint="@color/btn_secondary"
+            style="@style/Widget.Material3.Button" />
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Connect"
+            android:textSize="12sp"
+            android:backgroundTint="@color/header_blue"
+            android:visibility="gone"
+            style="@style/Widget.Material3.Button" />
+
+        <Button
+            android:id="@+id/btnDisconnect"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Disconnect"
+            android:textSize="11sp"
+            android:backgroundTint="@color/btn_danger"
+            style="@style/Widget.Material3.Button" />
+    </LinearLayout>
+
+    <!-- SECTION LABEL -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="COMMANDS"
+        android:textColor="@color/text_secondary"
+        android:textSize="10sp"
+        android:letterSpacing="0.2"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:background="@color/bg_dark" />
+
+    <!-- SHOT POWER BUTTON — mot1 -->
+    <FrameLayout
+        android:id="@+id/btnRigide"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_shot_power"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_overlay_gradient" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SHOT POWER"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:shadowColor="#CC000000"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mot1"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.2" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏒"
+                android:textSize="30sp"
+                android:alpha="0.75" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- STICK FLEX BUTTON — mot2 -->
+    <FrameLayout
+        android:id="@+id/btnNonRigide"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_stick_flex"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_overlay_gradient" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STICK FLEX"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:shadowColor="#CC000000"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mot2"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.2" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🥅"
+                android:textSize="30sp"
+                android:alpha="0.75" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- SMART BUTTON — mot101 -->
+    <FrameLayout
+        android:id="@+id/btnAutoDetect"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_smart"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_overlay_gradient" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SMART"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:shadowColor="#CC000000"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mot101"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.2" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🧠"
+                android:textSize="30sp"
+                android:alpha="0.75" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- TERMINAL HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="2dp"
+        android:background="@color/bg_dark">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TERMINAL"
+            android:textColor="@color/text_secondary"
+            android:textSize="9sp"
+            android:letterSpacing="0.3" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:text="Clear"
+            android:textSize="10sp"
+            android:backgroundTint="@color/surface_dark"
+            android:paddingHorizontal="10dp"
+            style="@style/Widget.Material3.Button" />
+    </LinearLayout>
+
+    <!-- TERMINAL OUTPUT -->
+    <ScrollView
+        android:id="@+id/scrollTerminal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/terminal_bg"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvTerminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textColor="@color/terminal_text"
+            android:textSize="11sp"
+            android:text="" />
+    </ScrollView>
+
+    <!-- COMMAND INPUT ROW -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/surface_dark"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="6dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=">>"
+            android:textColor="@color/accent_green"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:paddingEnd="8dp" />
+
+        <EditText
+            android:id="@+id/etCommand"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="command"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:background="@android:color/transparent"
+            android:imeOptions="actionSend"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="▶"
+            android:textSize="16sp"
+            android:enabled="false"
+            android:backgroundTint="@color/header_blue"
+            android:paddingHorizontal="16dp"
+            style="@style/Widget.Material3.Button" />
+    </LinearLayout>
+
+</LinearLayout>

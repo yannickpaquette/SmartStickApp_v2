@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#121212</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="terminal_bg">#0D0D0D</color>
+    <color name="terminal_text">#00FF41</color>
+    <color name="header_blue">#1565C0</color>
+    <color name="accent_green">#4CAF50</color>
+    <color name="text_secondary">#9E9E9E</color>
+    <color name="white">#FFFFFF</color>
+    <color name="divider">#2C2C2C</color>
+
+    <!-- Command button colors -->
+    <color name="btn_idle">#455A64</color>
+    <color name="btn_rigide">#B71C1C</color>
+    <color name="btn_non_rigide">#1B5E20</color>
+    <color name="btn_auto">#E65100</color>
+    <color name="btn_secondary">#37474F</color>
+    <color name="btn_danger">#C62828</color>
+
+    <!-- Status -->
+    <color name="status_green">#4CAF50</color>
+    <color name="status_red">#F44336</color>
+</resources>
